@@ -1,0 +1,509 @@
+/*Margin: espacio hacia afuera
+Padding: espacio haca dentro
+
+Los elementos en bloque abarcan todo el ancho de la pantalla, mientras que los inline
+abarcan el espacio que tengan*/
+*{
+    /*Se agrega para que los bordes de la caja
+    respete los bordes que tiene*/
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto";
+    font-size: 13px;
+}
+
+a{
+    /*Para poder darles un alto, este cambia el comportamiento de los elementos*/
+    display: inline-block;
+    text-decoration: none;
+}
+
+header{
+    /*Espacio hacia dentro del elementos*/
+    padding: 15px 0;
+    /*Para que el menú tenga una posicón fija*/
+    position: fixed;
+    /*Para que esté siempre arriba*/
+    top: 0;
+    /*Para que ocupe todo el ancho*/
+    width: 100%;
+    /*Para que esté pegado a la izquierda*/
+    left: 0;
+    /*Para que el header esté encima del inicio*/
+    z-index: 2;
+    background-color: white;
+}
+
+header .container{
+    /*para cambiar el comportamiento de un elemento, aprovechar
+    el espacio dentro del elemento*/
+    display: flex;
+    /*Para que los elementos se acomoden en el espacio que tienen en base al eje x*/
+    justify-content: space-between;
+    /*Para que los elementos se acomoden en el espacio que tienen en base al eje y*/
+    align-items: center;
+}
+
+header .container .logo{
+    width: 100px;
+}
+
+/*Porpiedad para los elementos de la barra de navegación*/
+header .container nav a{
+    color: red;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/*Se pone acá para que no se vea nada en la página versión PC*/
+header .container .hamb{
+    display: none;
+}
+
+footer.seccion{
+    background-color: black;
+    color: white;
+    padding-bottom: 0;
+}
+
+/*Para lo de derechos reservados, la barra final*/
+footer .barra-footer{
+    background-color: gray;
+    text-align: center;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer .logo-footer{
+    width: 100%;
+}
+
+footer ul{
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+
+footer ul li{
+    margin-bottom: 10px;
+}
+
+footer .redes{
+    /*Se pueden tratar como fuentes, por eso el font-size*/
+    font-size: 30px;
+    /*Para que quede uno al lado del otro*/
+    display: flex;
+}
+
+footer .redes a{
+    margin: 0 7.5px;
+}
+
+footer p{
+    margin-bottom: 30px;
+}
+
+footer a{
+    color: white;
+}
+
+/*Propiedad para todos los botones*/
+.boton{
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: none;
+}
+
+/*Para los elementos que tienen dos clases, se escriben JUNTAS, no se separan por un espacio*/
+.boton.boton-rojo{
+    color: white;
+    background-color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boton.boton-blanco{
+    color: red;
+    background-color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+.boton.boton-negro{
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.boton.boton-negro:hover{
+    color: black;
+    background-color: white;
+}
+
+.seccion{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/*Se crea esta clase para que, independientemente de la imagen, quepa de buena
+manera en el cuadrado que haremos*/
+.cuadrado-perfecto{
+    /*Para que abarque todo el ancho del bloque*/
+    width: 100%;
+    padding-bottom: 100%;
+    /*Se pone relativa para que la imagen pueda acomodarse bien en el cuadrado*/
+    position: relative;
+}
+
+.cuadrado-perfecto img{
+    /*Para que abarque todo el ancho del bloque*/
+    width: 100%;
+    height: 100%;
+    /*Esta propiedad se utiliza para cubrir todo el espacio utilizado,
+    propiedad solo para imágenes*/
+    object-fit: cover;
+    /*Se centra la imagen*/
+    object-position: center;
+    /*Absoluto porque necesito que la imagen no ocupe un espacio*/
+    position: absolute;
+    /*Es casi estandar posicionar de esa manera el top y el left*/
+    top: 0;
+    left: 0;
+}
+
+.container{
+    width: 1140px;
+    margin: 0 auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    /*Se pone para que el container quede encima del iframe, en la parte de contáctenos*/
+    position: relative;
+}
+
+.container-fluid{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.row{
+    /*Para que se alinien y aprovechen el espacio que hay*/
+    display: flex;
+    /*Si una de las s no entra por su tamaño, pasará hacia abajo*/
+    flex-wrap: wrap;
+    /*Para que se alinee al logo*/
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.columna{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.columna-25{
+    width: 25%;
+}
+
+.columna-33{
+    width: 33.33%;
+}
+
+.columna-41{
+    width: 41.66%;
+}
+
+.columna-50{
+    width: 50%;
+}
+
+.empujar-50{
+    margin-left: 50%;
+}
+
+.empujar-58{
+    margin-left: 58.3%;
+}
+
+.empujar-66{
+    margin-left: 66.66%;
+}
+
+.empujar-0{
+    margin-left: 0;
+}
+
+#inicio{
+    position: relative;
+}
+
+#inicio img{
+    width: 100%;
+    display: block;
+}
+
+#inicio .bloque-inicio{
+    position: absolute;
+    /*50% emepezando desde arriba en el bloque*/
+    top: 40%;
+    left: 50%;
+    width: 400px;
+    text-align: center;
+    margin-left: -200px;
+}
+
+#inicio .bloque-inicio h1{
+    color: white;
+    font-size: 35px;
+}
+
+#inicio .bloque-inicio p{
+    color: white;
+    font-size: 16px;
+}
+
+#nosotros{
+    /*Poner imagen de fondo*/
+    background-image: url(/img/latas.jpg);
+    /*Para tratar de aprovechar el espacio que tenga*/
+    background-size: cover;
+}
+
+#nosotros p{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+#servicios .bloque-servicio{
+    border: 1px solid gray;
+}
+
+
+#servicios .bloque-servicio .bloque-img-servicio img{
+    width: 100%;
+}
+
+#servicios .bloque-servicio .bloque-img-servicio.cuadrado-perfecto{
+    /*Para que la imagen quede como un rectángulo*/
+    padding-bottom: 56.25%;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio{
+    padding: 15px;
+}
+
+#servicios .bloque-servicio .bloque-contenido-servicio h3{
+    margin-top: 0;
+    font-size: 25px;
+}
+
+#galeria h4{
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    /*Se pude trabjar con posicion absoluta, ya que el padre es realtivo (cuadrado perfecto)*/
+    position: absolute;
+    top: 40%;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+}
+
+/*Para poner las imágenes en escala de grises*/
+#galeria img{
+    filter: grayscale(1);
+}
+
+/*Cuando se ponga el mouse encima del cuadrado perfecto en la galería de imágenes*/
+#galeria .cuadrado-perfecto :hover{
+    filter: none;
+}
+
+#galeria .cuadrado-perfecto:hover h4{
+    display: none;
+}
+
+#contactenos{
+    position: relative;
+}
+
+/*Para que el iframe no ocupe un espacio y pueda ponerse el formaulario encima de él*/
+#contactenos iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*Blanco y negro*/
+    filter: grayscale(1);
+}
+
+#contactenos form{
+    padding: 60px;
+    background-color: red;
+}
+
+#contactenos form .form-block{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#contactenos form .form-block .form-control{
+    display:block;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+#contactenos form .form-block textarea{
+    display:block;
+    height: 100px;
+    font-size: 16px;
+    border: 1px solid grey;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+#contactenos form .form-block.bloque-utlimo{
+    margin-bottom: 0;
+}
+
+
+@media(max-width: 767px){
+    /*Todas las propiedades agregadas acá solo funcionarán con un ancho máximo de
+    767px*/
+
+    body{
+        font-size: 15px;
+    }
+    
+    .bloque-inicio{
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    header .container nav{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding-right: 15px;
+        padding-left: 15px;
+        top: 0;
+        left: 0;
+        display: flex;
+        /*Para que los elementos estén en columnas*/
+        flex-direction: column;
+        /*Se agrega una transición que se verá luego con JS*/
+        transition: all 0.4s ease;
+        transform: translateX(100%);
+    }
+
+    /*Se crea el .open para que con JS regrese a su posición normal*/
+    header .container nav.open{
+        transform: translateX(0);
+    }
+
+    header .container nav a{
+        font-size: 30px;
+        margin: 15px 0;
+    }
+
+    /*Se agregan las barras para ver la barra de navegación*/
+    header .container .hamb{
+        display: block;
+        font-size: 40px;
+        color: red;
+        position: relative;
+    }
+
+    form .boton.boton-negro{
+        width: 100%;
+    }
+
+    /*Centrar elementos del footer*/
+    footer{
+        text-align: center;
+    }
+
+    /*Centrar logo*/
+    footer .logo-footer{
+        width: 50%;
+    }
+
+    /*Centrar elementos de las redes sociales*/
+    footer .redes{
+        justify-content: center;
+    }
+
+    .container{
+        /*Al no saber el ancho del dispositivo, se pone 100%*/
+        width: 100%;
+    }
+
+    /*Solo para mobile, para que abarque todo el ancho de la pantalla*/
+    .columna-mobile-100{
+        width: 100%;
+    }
+
+    /*Solo para mobile, para que cada imagen abarque la mitad de la pantalla*/
+    .columna-mobile-50{
+        width: 50%;
+    }
+
+    /*Estas dos clases son creadas solo para mobile, y son para que el formulario quede
+    sin margenes y sin padding, al 100%*/
+    .empujar-mobile-0{
+        margin-left: 0;
+    }
+
+    .sinpadding-mobile{
+        padding: 0;
+    }
+
+    #inicio{
+        /*vh significa alto del dispositivo*/
+        height: 100vh;
+    }
+
+    #inicio img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    #servicios .bloque-servicio{
+        margin-bottom: 15px;
+    }
+
+    #contactenos{
+        padding: 0;
+    }
+
+    #contactenos iframe{
+        position: relative;
+        height: 50vh;
+    }
+}
+
+
+
+
+
+
